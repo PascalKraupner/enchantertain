@@ -4,9 +4,9 @@ services:
     build: .
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bookmarks.entrypoints=websecure"
-      - "traefik.http.routers.bookmarks.rule=Host(`find-similar-games.pascalkraupner.dev`)"
-      - "traefik.http.routers.bookmarks.tls.certresolver=lets-encr"
+      - "traefik.http.routers.find-similar-games.entrypoints=websecure"
+      - "traefik.http.routers.find-similar-games.rule=Host(`find-similar-games.pascalkraupner.dev`)"
+      - "traefik.http.routers.find-similar-games.tls.certresolver=lets-encr"
     networks:
       - internal
       - proxy
