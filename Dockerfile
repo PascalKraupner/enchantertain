@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     nginx \
     &&  curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
-    && apt-get install -y nodejs
+    && apt-get install -y nodejs npm
 
 # Install supervisor
 RUN apt-get install -y supervisor
