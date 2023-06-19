@@ -5,7 +5,7 @@
         <p>&copy; Pascal Kraupner {{ \Carbon\Carbon::now()->format("Y")}}</p>
     </div>
     <div>
-        <a href="https://www.pascalkraupner.de/impressum" target="_blank"> Impressum</a> |
-        <a href="https://www.pascalkraupner.de/datenschutz" target="_blank"> Datenschutz</a>
+        <a href="https://www.pascalkraupner.dev/imprint" target="_blank"> Impressum</a> |
+        <a href="https://www.pascalkraupner.dev/privacy" target="_blank"> Datenschutz</a>
     </div>
 </footer>
