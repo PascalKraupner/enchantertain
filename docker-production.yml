@@ -7,6 +7,8 @@ services:
       - "traefik.http.routers.find-similar-games.entrypoints=websecure"
       - "traefik.http.routers.find-similar-games.rule=Host(`find-similar-games.pascalkraupner.dev`)"
       - "traefik.http.routers.find-similar-games.tls.certresolver=lets-encr"
+      - "traefik.http.routers.find-similar-games.middlewares=find-similar-games-auth"
+      - "traefik.http.middlewares.find-similar-games-auth.basicauth.users=pascal:$$apr1$$2/xHwJU3$$iqhuvn3Se1sNoZ0beuFMi1"
     networks:
       - internal
       - proxy
