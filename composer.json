@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "marcreichel/igdb-laravel": "^4.0",
+        "openai-php/laravel": "^0.7.0",
         "spatie/laravel-view-models": "^1.5"
     },
     "require-dev": {
@@ -58,7 +59,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

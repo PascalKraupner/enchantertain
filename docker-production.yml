@@ -4,9 +4,14 @@ services:
     build: .
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.find-similar-games.entrypoints=websecure"
-      - "traefik.http.routers.find-similar-games.rule=Host(`find-similar-games.pascalkraupner.dev`)"
-      - "traefik.http.routers.find-similar-games.tls.certresolver=lets-encr"
+      - "traefik.http.routers.enchantertain.entrypoints=websecure"
+      - "traefik.http.routers.enchantertain.rule=Host(`enchantertain.com`) || Host(`www.enchantertain.com`)"
+      - "traefik.http.middlewares.enchantertain-redirect.redirectregex.regex=^https://enchantertain.com/(.*)"
+      - "traefik.http.middlewares.enchantertain-redirect.redirectregex.replacement=https://www.enchantertain.com/$${1}"
+      - "traefik.http.routers.enchantertain.tls.certresolver=lets-encr"
+      - "traefik.http.routers.enchantertain.middlewares=enchantertain-redirect"
+      - "traefik.http.routers.enchantertain.middlewares=enchantertain-auth"
+      - "traefik.http.middlewares.enchantertain-auth.basicauth.users=enchantertain:$$apr1$$2mv0jkz7$$6.irxqUQgGQRP9lujr/Pc0"
     networks:
       - internal
       - proxy

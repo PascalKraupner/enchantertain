@@ -6,13 +6,13 @@
         <link rel="icon" type="image/png" href="/favicon.png"/>
         <link href="/css/app.css" rel="stylesheet">
         <script defer src="/js/app.js"></script>
-        <title>Find Similar Games</title>
+        <title>Enchantertain</title>
         @livewireStyles
     </head>
     <body class="antialiased font-sans bg-zinc-900 text-white flex flex-col min-h-screen">
         @include('includes.header')
        <main class="container mx-auto px-4 mb-10 flex-grow">
-            @yield('content') 
+            @yield('content')
        </main>
        <div class="bg-white">
         @include('includes.footer')

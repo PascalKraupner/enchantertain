@@ -1,14 +1,14 @@
-<div class="relative w-full" x-data="{ open: true }" 
-    @click.outside="open = false" 
+<div class="relative w-full" x-data="{ open: true }"
+    @click.outside="open = false"
     @keydown.prevent.down="$focus.wrap().next()"
     @keydown.up="$focus.wrap().previous()"
 >
-    <input wire:model.debounce.500ms="searchTerm" type="text" 
+    <input wire:model.debounce.500ms="searchTerm" type="text"
         class="bg-zinc-700 w-full h-14 rounded-md px-4 pl-9 py-2 placeholder:text-white"
-        placeholder="Search..."
+        placeholder="Search for games..."
         x-ref="search"
         @keydown.window.slash.prevent="$refs.search.focus()"
-     
+
         @keydown.escape.window="
             $wire.searchTerm=''
             open = false;
@@ -24,14 +24,14 @@
             <ul>
                 @foreach ($games as $game )
                 <li class="border-b border-zinc-800/20">
-                    <a href="{{ route('games.index', $game->id) }}" 
+                    <a href="{{ route('games.index', $game->id) }}"
                         class="flex items-center hover:bg-zinc-600 focus:bg-zinc-600 p-5"
-                        @if ($loop->last) 
+                        @if ($loop->last)
                         @keydown.tab="open = false"
                         @endif
                     >
                         <img class="w-10" src="{{$game->coverSmallUrl }}" alt="game cover image">
-                        <span class="ml-4">{{ $game->name}} ({{$game->first_release_date}})</span> 
+                        <span class="ml-4">{{ $game->name}} ({{$game->first_release_date}})</span>
                     </a>
                 </li>
                 @endforeach
